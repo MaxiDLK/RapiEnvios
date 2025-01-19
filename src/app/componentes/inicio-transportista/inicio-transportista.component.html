@@ -1,0 +1,28 @@
+<ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<ion-card class="h-100">
+  <ion-card-content >
+    <div *ngIf="listadoNuevos.length > 0">
+      <h2>Solicitud de envios</h2>
+      <ion-row *ngIf="usuario">
+        <ion-col *ngFor="let item of listadoNuevos" (click)="verEnvio(item.id)" size="12">
+          <p>{{item.direccion?.calle}}</p>
+          <p>{{item.direccion?.localidad}}</p>
+        </ion-col>
+      </ion-row>
+   </div>
+    <div *ngIf="listado.length > 0">
+      <h2>Envios asignados</h2>
+      <ion-row *ngIf="usuario">
+        <ng-container *ngFor="let item of listado">
+        <ion-col *ngIf="item.estado !== 'entregado'" class="asignados" (click)="verEnvio(item.id)" size="12">
+          <p>{{item.direccion?.calle}}</p>
+          <p>{{item.direccion?.localidad}}</p>
+          <p>{{item.estado}}</p>
+        </ion-col>
+        </ng-container>
+      </ion-row>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,63 @@
+:host {
+    display: block;
+    background-color: #C9DCF0; /* Fondo principal */
+    color: #2F4F4F; /* Color del texto */
+  }
+  
+  /* Estilos para el ion-header */
+  ion-header {
+    --background: #245267; /* Fondo del encabezado */
+    --color: #EBEBEB; /* Texto claro en el encabezado */
+  }
+  
+  /* Estilos para el ion-toolbar */
+  ion-toolbar {
+    text-align: center;
+  }
+  
+  /* Estilos para el ion-title */
+  ion-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #EBEBEB; /* Texto blanco */
+  }
+  
+  /* Estilos para el formulario */
+  form {
+    margin: 20px;
+  }
+  
+  ion-list {
+    background-color: #EBEBEB; /* Fondo alternativo para el formulario */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  ion-item {
+    --background: transparent; /* Fondo transparente para los elementos */
+    color: #245267; /* Texto principal */
+    margin-bottom: 15px;
+  
+    ion-label {
+      font-weight: bold;
+      color: #245267; /* Texto de las etiquetas */
+    }
+  
+    ion-input {
+      color: #2F4F4F; /* Texto en los campos de entrada */
+    }
+  }
+  
+  ion-button {
+    --background: #245267; /* Color principal para los botones */
+    --color: #EBEBEB; /* Texto blanco */
+    border-radius: 10px;
+    margin-top: 15px;
+  
+    &:hover {
+      filter: brightness(1.1); /* Efecto hover */
+    }
+  
+  }
+  

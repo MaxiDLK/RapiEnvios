@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Historial</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="cerrarSesion()">
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="center-content">
+  <ng-container *ngIf="usuario && validacion">
+    <app-historial-usuario *ngIf="usuario.tipo == 'usuario'"></app-historial-usuario>
+    <app-historial-transportista *ngIf="usuario.tipo == 'transportista'"></app-historial-transportista>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size="6" class="footer-button">
+        <ion-button expand="block" routerLink="/home">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          Principal
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" class="footer-button">
+        <ion-button expand="block" routerLink="/historial">
+          <ion-icon slot="start" name="time-outline"></ion-icon>
+          Historial
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

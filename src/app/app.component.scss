@@ -1,0 +1,91 @@
+/* Establecer el fondo general para la aplicación */
+ion-app {
+    --ion-background-color: #C9DCF0; /* Fondo principal */
+    --ion-text-color: #EBEBEB; /* Color de texto */
+  }
+  
+  /* Estilos específicos para el ion-header */
+  ion-header {
+    --background: #245267; /* Color principal para el encabezado */
+    --color: #ffffff; /* Texto blanco en el encabezado */
+  }
+  
+  /* Estilos para el ion-toolbar */
+  ion-toolbar {
+    --background: #245267; /* Color principal en la barra de herramientas */
+    --color: #ffffff; /* Texto blanco en la barra de herramientas */
+  }
+  
+  /* Estilos para el ion-content */
+  ion-content {
+    --background: #C9DCF0; /* Fondo de contenido */
+    --color: #2F4F4F; /* Color de texto en el contenido */
+  }
+  
+  /* Estilos para los ion-card */
+  ion-card {
+    --background: #EBEBEB; /* Fondo alternativo para los cards */
+    --color: #2F4F4F; /* Texto en los cards */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Estilos para los botones */
+  ion-button {
+    --background: #245267; /* Color principal para los botones */
+    --color: #ffffff; /* Texto blanco en los botones */
+    --border-radius: 8px; /* Bordes redondeados en los botones */
+    --box-shadow: none; /* Sin sombra en los botones */
+  }
+  
+  /* Estilos para el ion-footer */
+  ion-footer {
+    --background: #245267; /* Fondo principal en el pie */
+    --color: #ffffff; /* Texto blanco en el pie */
+  }
+  
+  /* Asegurarse de que los botones en el pie ocupen todo el ancho */
+  ion-footer ion-button {
+    width: 100%;
+  }
+  
+  /* Reglas específicas para el modo oscuro */
+  :host([class*='dark']) {
+    ion-app {
+      --ion-background-color: #2F4F4F; /* Fondo oscuro */
+    }
+    ion-header, ion-toolbar {
+      --background: #245267; /* Mantener color principal */
+    }
+    ion-content {
+      --background: #2F4F4F; /* Fondo oscuro */
+    }
+    ion-card {
+      --background: #3E4A59; /* Fondo oscuro para los cards */
+      --color: #ffffff; /* Texto blanco en los cards */
+    }
+    ion-button {
+      --background: #245267; /* Mantener color principal */
+    }
+  }
+
+  .footer-button ion-button {
+    --background: var(--ion-color-primary);
+    --color: white;
+    --border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .footer-button ion-button:hover {
+    --background: var(--ion-color-primary-shade);
+  }
+  
+  ion-footer {
+    margin-top: 100px;
+    --background: var(--ion-color-light);
+    border-top: 1px solid var(--ion-color-medium);
+  }
+  
+  ion-toolbar {
+    padding: 8px;
+  }

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>NuevoEnvio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="envioForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input  type="text" formControlName="nombre" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">DNI <span>(Receptor)</span></ion-label>
+        <ion-input  type="text" formControlName="dniReceptor" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Calle</ion-label>
+        <ion-input  type="text" formControlName="calle" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Localidad</ion-label>
+        <ion-input type="text" formControlName="localidad" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Provincia</ion-label>
+        <ion-input type="text" formControlName="provincia" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit" [disabled]="!envioForm.valid">Crear Envío</ion-button>
+  </form>
+</ion-content>

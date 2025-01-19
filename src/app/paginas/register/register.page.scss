@@ -1,0 +1,62 @@
+:host {
+    display: block;
+    background-color: #C9DCF0; // Fondo principal
+    color: #2F4F4F; // Texto
+  }
+  
+  ion-header {
+    --background: #245267; // Color principal para el header
+    --color: #EBEBEB; // Texto alternativo en el header
+  }
+  
+  ion-toolbar {
+    text-align: center;
+  }
+  
+  ion-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  form {
+    margin: 20px;
+  }
+  
+  ion-list {
+    background-color: #EBEBEB; // Fondo alternativo para el formulario
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Sombra sutil
+  }
+  
+  ion-item {
+    --background: transparent; // Fondo transparente para los elementos
+    color: #245267; // Texto principal
+    margin-bottom: 15px;
+  
+    ion-label {
+      font-weight: bold;
+      color: #245267; // Texto de las etiquetas
+    }
+  
+    ion-input {
+      color: #2F4F4F; // Texto de los campos de entrada
+    }
+  }
+  
+  ion-button {
+    --background: #245267; // Color principal para los botones
+    --color: #EBEBEB; // Texto alternativo
+    border-radius: 10px;
+    margin-top: 15px;
+  
+    &:hover {
+      filter: brightness(1.1); // Efecto hover
+    }
+  
+    &[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  

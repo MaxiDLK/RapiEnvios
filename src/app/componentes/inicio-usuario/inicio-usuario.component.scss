@@ -1,0 +1,64 @@
+:host {
+    display: block;
+    background-color: #C9DCF0; /* Fondo principal */
+    color: #2F4F4F; /* Color del texto */
+  }
+  
+  ion-card.h-100 {
+    background-color: #EBEBEB; /* Fondo alternativo para la tarjeta */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 15px;
+    height: 100%; /* Asegura que ocupe todo el alto disponible */
+  }
+  
+  ion-card-content {
+    color: #2F4F4F; /* Color del texto */
+    font-size: 16px;
+    line-height: 1.5;
+  
+    ion-row {
+      margin-bottom: 20px;
+    }
+  
+    ion-col {
+      background-color: #ffffff; /* Fondo blanco para cada item */
+      border-radius: 10px; /* Bordes redondeados para los elementos de la lista */
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: pointer; /* Indicador de que es clickeable */
+  
+      &:hover {
+        background-color: #AFEEEE; /* Fondo cuando el item está en hover */
+        filter: brightness(1.05); /* Efecto de brillo al pasar el cursor */
+      }
+  
+      p {
+        margin: 5px 0;
+        color: #2F4F4F; /* Texto principal */
+  
+        &.emisor-receptor {
+          font-weight: 600;
+          color: #245267; /* Destacar emisor y receptor */
+        }
+      }
+    }
+  }
+  
+  ion-button {
+    --background: #245267; /* Color principal para los botones */
+    --color: #EBEBEB; /* Texto alternativo */
+    border-radius: 10px;
+    margin-top: 15px;
+    padding-bottom: 50px;
+  
+    &:hover {
+      filter: brightness(1.1); /* Efecto hover */
+    }
+  
+    &[class="footer"] {
+      --background: #AFEEEE; /* Fondo del botón de pie de página */
+      --color: #245267; /* Texto alternativo para el botón */
+    }
+  }
+  

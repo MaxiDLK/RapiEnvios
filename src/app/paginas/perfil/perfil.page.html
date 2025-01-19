@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Datos del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-text>{{ usuario?.nombre }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido:</ion-label>
+          <ion-text>{{ usuario?.apellido }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>DNI:</ion-label>
+          <ion-text>{{ usuario?.dni }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de Nacimiento:</ion-label>
+          <ion-text>{{ usuario?.fechaNacimiento }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dirección:</ion-label>
+          <ion-text>{{ usuario?.direccion?.calle }}, {{ usuario?.direccion?.localidad }}, {{ usuario?.direccion?.provincia }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

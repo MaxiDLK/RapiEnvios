@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>DetallePedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="envio && usuario">
+    <ion-card-content *ngIf="usuario.tipo == 'usuario'">
+      <p>Nombre: {{envio.nombre}}</p>
+      <p>Direccion: {{envio.direccion?.calle}},{{envio.direccion?.localidad}} </p>
+      <p>Estado: {{envio.estado}} </p>
+      <hr>
+      <div #qrcodeElement>
+        <qrcode [qrdata]="qrData" [width]="200" elementType="img"></qrcode>
+      </div>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="usuario.tipo == 'transportista'">
+      <p>Nombre: {{envio.nombre}}</p>
+      <p>Direccion: {{envio.direccion?.calle}},{{envio.direccion?.localidad}} </p>
+      <hr>
+      <ion-row *ngIf="envio.estado != 'procesando'">
+        <ion-col size="12">
+          <ion-label>Modificar Estado</ion-label>
+          <ion-select interface="popover" class="cambiarEstado" [(ngModel)]="opcionEstado" placeholder="Cambiar estado">
+            <ion-select-option value="viajando">En viaje</ion-select-option>
+            <ion-select-option value="entregado">Entregado</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-button *ngIf="envio.estado != 'procesando'" expand="block" (click)="escanearQR()">ESCANEAR QR</ion-button>
+      <ion-button *ngIf="envio.estado != 'procesando'" expand="block" (click)="cambiarEstado()">CAMBIAR ESTADO</ion-button>
+      <div hidden #qrcodeElement *ngIf="envio.estado == 'procesando'">
+        <qrcode [qrdata]="qrData" [width]="200" elementType="img"></qrcode>
+      </div>
+      <ion-button *ngIf="envio.estado == 'procesando'" expand="block" (click)="convertirQrToBase64()">ACEPTAR</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

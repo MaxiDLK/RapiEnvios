@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Validación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Validación de usuario -->
+  <div *ngIf="!validacion" class="box-validacion">
+    <ion-text>Escanea tu código DNI para proceder con la validación.</ion-text>
+    <ion-button expand="block" (click)="escanearCodigo()">Escanear</ion-button>
+    <ion-button expand="block" (click)="setMock()">Emular Datos Dni</ion-button>
+  </div>
+
+  <!-- Formulario de validación -->
+  <form *ngIf="validacion" [formGroup]="form" (ngSubmit)="validarUsuario()" class="formulario-validacion">
+    <ion-list>
+      <h2>Tipo de Usuario</h2>
+      <ion-item>
+        <ion-segment formControlName="tipo">
+          <ion-segment-button value="usuario">
+            Usuario
+          </ion-segment-button>
+          <ion-segment-button value="transportista">
+            Transportista
+          </ion-segment-button>
+        </ion-segment>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Calle:</ion-label>
+        <ion-input type="text" formControlName="calle" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Localidad</ion-label>
+        <ion-input  formControlName="localidad" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Provincia</ion-label>
+        <ion-input  type="text" formControlName="provincia" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" type="submit" [disabled]="!form.valid">Validar Usuario</ion-button>
+  </form>
+</ion-content>

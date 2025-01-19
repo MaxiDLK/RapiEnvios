@@ -1,0 +1,111 @@
+d:host {
+  display: block;
+  background-color: #C9DCF0;
+  color: #2F4F4F;
+}
+
+ion-header {
+  --background: #245267;
+  --color: #EBEBEB;
+}
+
+ion-content {
+  --background: #C9DCF0;
+  padding: 20px;
+}
+
+.box-validacion {
+  background-color: #C9DCF0;
+  color: #245267;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  ion-text {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  ion-button {
+    --background: #245267;
+    --color: #EBEBEB;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+.formulario-validacion {
+  ion-list {
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    color: #245267;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  ion-item {
+    --background: transparent;
+    --color: #245267; 
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+    ion-label {
+      --color: #245267;
+      font-weight: bold;
+      color: #245267; 
+
+    ion-input {
+      --background: #EBEBEB;
+      --placeholder-color: #245267;
+      color: #245267;
+    }
+
+  ion-button[type="submit"] {
+    --background: #245267;
+    --color: #EBEBEB;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+
+  button-inner{
+    color:#245267;
+  }
+
+}}
+
+
+ion-segment-button::part(indicator-background) {
+  background: #08a391;
+}
+
+/* Material Design styles */
+ion-segment-button.md::part(native) {
+  color: #000;
+}
+
+.segment-button-checked.md::part(native) {
+  color: #08a391;
+}
+
+ion-segment-button.md::part(indicator-background) {
+  height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios::part(native) {
+  color: #08a391;
+}
+
+.segment-button-checked.ios::part(native) {
+  color: #fff;
+}
+
+ion-segment-button.ios::part(indicator-background) {
+  border-radius: 20px;
+}
